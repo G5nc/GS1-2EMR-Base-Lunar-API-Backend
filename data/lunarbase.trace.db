@@ -1,0 +1,9 @@
+2026-05-23 14:10:31.357867-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID DATA_HORA SENSORES SENSORES"; expected "INSERT"; SQL statement:
+ID DATA_HORA SENSORES SENSORES [42001-232]
+2026-05-23 14:10:40.746355-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID DATA_HORA SENSORES SENSORES SENSORES"; expected "INSERT"; SQL statement:
+ID DATA_HORA SENSORES SENSORES SENSORES [42001-232]
+2026-05-23 14:11:00.869196-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID DATA_HORA SENSORES SENSORES SENSORES SELECT * FROM SENSORES"; expected "INSERT"; SQL statement:
+ID DATA_HORA SENSORES SENSORES SENSORES SELECT * FROM SENSORES [42001-232]
