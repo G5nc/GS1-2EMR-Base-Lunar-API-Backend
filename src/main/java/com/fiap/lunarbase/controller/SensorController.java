@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Random;  // ← IMPORTANTE: adicionar este import
 
 @RestController
 @RequestMapping("/api/sensores")
@@ -38,6 +39,24 @@ public class SensorController {
     public Sensor criar(@RequestBody Sensor sensor) {
         return sensorService.salvar(sensor);
     }
+
+    // ========== NOVO MÉTODO DE SIMULAÇÃO ==========
+    @PostMapping("/simular")
+    public Sensor simularSensor() {
+        Random random = new Random();
+        String[] tipos = {"temperatura", "umidade", "pressao", "energia"};
+        String[] unidades = {"°C", "%", "Pa", "kW"};
+
+        int idx = random.nextInt(tipos.length);
+        Sensor sensor = new Sensor();
+        sensor.setNome("Sensor Simulado " + System.currentTimeMillis());
+        sensor.setTipo(tipos[idx]);
+        sensor.setValor(10 + random.nextDouble() * 90);
+        sensor.setUnidade(unidades[idx]);
+
+        return sensorService.salvar(sensor);
+    }
+    // ========== FIM DO NOVO MÉTODO ==========
 
     @PutMapping("/{id}")
     public ResponseEntity<Sensor> atualizar(@PathVariable Long id, @RequestBody Sensor sensor) {
