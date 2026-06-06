@@ -27,7 +27,7 @@ API desenvolvida em **Java com Spring Boot** para controle dos recursos da base 
 | Climatização | `/api/climatizacao` |
 | Alertas | `/api/alertas` |
 
-## 🗄️ Banco de Dado
+## 🗄️ Banco de Dados
 - Console H2: http://localhost:8080/h2-console
 - JDBC URL: `jdbc:h2:file:./data/lunarbase`
 - Usuário: `sa`
